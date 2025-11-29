@@ -1,4 +1,4 @@
-import bestselling from "../images/bestselling copy.png";
+import bestselling from "../images/bestselling.png";
 import nike1 from "../images/jordan1.webp";
 import nike2 from "../images/jordan2.webp";
 import adidas1 from "../images/adidas1.webp";
@@ -41,7 +41,7 @@ export default function Hero2() {
             <div className="mt-5">
                 <ul className="flex justify-around pl-50 pr-50 gap-2 text-xs">
                     <li><img src={puma4} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Yeezy 350 V2 <br /> Carbon Beluga<br />From Rs. 16,999</a></li>
-                    <li><img src={nike7} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Sambas OG<br />White Green<br />From Rs.8,499</a></li>
+                    <li><img src={nike7} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Sambas OG<br />White Green<br />From Rs. 8,499</a></li>
                     <li><img src={adidas4} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Yeezy 350 <br /> Natural<br />From Rs. 17,999</a></li>
                     <li><img src={nike8} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Sambas OG <br /> Collegiate Green<br />From Rs. 14,999</a></li>
                 </ul>
