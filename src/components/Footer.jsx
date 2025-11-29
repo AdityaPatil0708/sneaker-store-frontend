@@ -29,7 +29,7 @@ export default function Footer() {
                         <a href="#">Shop</a>
                     </li>
                     <li className="hover:text-gray-950 transform duration-500">
-                        <a href="#">Terms and Conditions!</a>
+                        <a href="#">Terms and Conditions</a>
                     </li>
                     <li className="hover:text-gray-950 transform duration-500">
                         <a href="#">Privacy Policy</a>
