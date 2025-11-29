@@ -1,4 +1,4 @@
-import bestselling from "../images/bestselling.png";
+import bestselling from "..images/bestselling.png";
 import nike1 from "../images/jordan1.webp";
 import nike2 from "../images/jordan2.webp";
 import adidas1 from "../images/adidas1.webp";
