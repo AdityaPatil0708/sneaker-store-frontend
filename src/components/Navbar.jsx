@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 import { Search, User2, ShoppingCart, Menu, X } from 'lucide-react';
 import { Link } from "react-router-dom";
 import logo from '../images/logo2.png';
@@ -11,7 +11,7 @@ export default function Navbar() {
     const handleScroll = () => {
         if (window.scrollY < lastScrollY) {
             setIsVisible(true);
-        } 
+        }
         else if (window.scrollY > lastScrollY && window.scrollY > 100) {
             setIsVisible(false);
         }
@@ -29,19 +29,19 @@ export default function Navbar() {
 
     return (
         <>
-            <nav 
-                id="nav" 
-                className={`flex justify-between items-center pt-3 pb-3 bg-white fixed top-0 left-0 right-0 z-50 transform transition-transform duration-300 ${navbarClass}`}
+            <nav
+                id="nav"
+                className={`flex justify-between items-center pt-2 pb-2 bg-white fixed top-0 left-0 right-0 z-50 transform transition-transform duration-300 ${navbarClass} `}
             >
                 <div>
-                    <button className='hover:cursor-pointer pl-4 md:pl-10'>
+                    <button className='hover:cursor-pointer'>
                         <img src={logo} alt="not found" width={60} className="md:w-20" />
                     </button>
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden lg:flex items-center">
-                    <ul className="bg-white-800 text-black text-sm flex gap-8 justify-center pl-20">
+                <div className="hidden lg:flex justify-center">
+                    <ul className="bg-white-800 text-black text-sm flex justify-center gap-8 pl-40">
                         <li className='hover:underline hover:underline-offset-5'><Link to="/">Home</Link></li>
                         <li className='hover:underline hover:underline-offset-5'><Link to="/men">Men</Link></li>
                         <li className='hover:underline hover:underline-offset-5'><Link to="/women">Women</Link></li>
@@ -77,7 +77,7 @@ export default function Navbar() {
                     <button className="p-2">
                         <ShoppingCart size={20} />
                     </button>
-                    <button 
+                    <button
                         className="p-2"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
@@ -102,8 +102,8 @@ export default function Navbar() {
                         <li className='hover:underline hover:underline-offset-5' onClick={() => setIsMobileMenuOpen(false)}>
                             <Link to="/featured">Featured</Link>
                         </li>
-                        <li className="pt-4 border-t">
-                            <button className="w-full border p-2 rounded-full hover:bg-black hover:text-white transition duration-400 flex items-center justify-center gap-2">
+                        <li className="pt-4">
+                            <button className="w-20 border p-2 rounded-full hover:bg-black hover:text-white transition duration-400 flex items-center justify-center gap-2">
                                 <User2 size={16} />
                                 Account
                             </button>

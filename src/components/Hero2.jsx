@@ -16,39 +16,63 @@ import adidas4 from "../images/yeezy2.png";
 
 
 export default function Hero2() {
+    const products = [
+        [
+            { img: nike1, name: "Air Jordan 1 Retro Low", subtitle: "OG 'Mocha'", price: "14,999" },
+            { img: adidas1, name: "Adidas Sambas", subtitle: "OG 'White Black Gum'", price: "10,999" },
+            { img: puma1, name: "Puma Palermo Unisex", subtitle: "Sneakers Ivory", price: "6,999" },
+            { img: nike2, name: "Jordan 1 Low bred", subtitle: "Toe 2.0", price: "14,999" }
+        ],
+        [
+            { img: puma2, name: "Travis Scott x Jordan 1", subtitle: "'Velvet Brown'", price: "42,999" },
+            { img: nike3, name: "Dunk Low Medium", subtitle: "Curry", price: "13,999" },
+            { img: nike4, name: "Dunk Low Lottery Pack", subtitle: "Malachite", price: "11,999" },
+            { img: adidas2, name: "Dunk Low Union Argon", subtitle: "Passport Pack", price: "27,999" }
+        ],
+        [
+            { img: puma4, name: "Adidas Yeezy 350 V2", subtitle: "Carbon Beluga", price: "16,999" },
+            { img: nike7, name: "Adidas Sambas OG", subtitle: "White Green", price: "8,499" },
+            { img: adidas4, name: "Adidas Yeezy 350", subtitle: "Natural", price: "17,999" },
+            { img: nike8, name: "Adidas Sambas OG", subtitle: "Collegiate Green", price: "14,999" }
+        ]
+    ];
+
     return (
-        <div id="image_description" className="border-b border-gray-700  mt-10  pb-10">
-            <div className="box-border flex justify-center">
-                <img src={bestselling} alt="" height={100} width={700} />
+        <div id="image_description" className="border-b border-gray-700 mt-10 pb-10 px-4">
+            <div className="box-border flex justify-center mb-8">
+                <img 
+                    src={bestselling} 
+                    alt="Best Selling" 
+                    className="w-full max-w-2xl h-auto"
+                />
             </div>  
-            <div className="mt-10">
-                <ul className="flex justify-around pl-50 pr-50 gap-2 text-xs">
-                    <li><img src={nike1} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Air Jordan 1 Retro Low <br /> OG 'Mocha'<br />From Rs. 14,999</a></li>
-                    <li><img src={adidas1} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Sambas <br /> OG 'White Black Gum'<br />From Rs. 10,999</a></li>
-                    <li><img src={puma1} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Puma Palermo Unisex <br /> Sneakers Ivory<br />From Rs. 6,999</a></li>
-                    <li><img src={nike2} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Jordan 1 Low bred <br /> Toe 2.0<br />From Rs. 14,999</a></li>
-                </ul>
-            </div>
-            <div className="mt-5">
-                <ul className="flex justify-around pl-50 pr-50 gap-2 text-xs">
-                    <li><img src={puma2} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Travis ScottxJordan 1<br /> 'Velvet Brown'<br />From Rs. 42,999</a></li>
-                    <li><img src={nike3} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Dunk Low Medium<br /> Curry<br />From Rs. 13,999</a></li>
-                    <li><img src={nike4} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Dunk Low Lottery Pack<br /> Malachite<br />From Rs. 11,999</a></li>
-                    <li><img src={adidas2} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Dunk Low Union Argon <br /> Passport Pack<br />From Rs. 27,999</a></li>
-                </ul>
-            </div>
             
-            <div className="mt-5">
-                <ul className="flex justify-around pl-50 pr-50 gap-2 text-xs">
-                    <li><img src={puma4} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Yeezy 350 V2 <br /> Carbon Beluga<br />From Rs. 16,999</a></li>
-                    <li><img src={nike7} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Sambas OG<br />White Green<br />From Rs. 8,499</a></li>
-                    <li><img src={adidas4} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Yeezy 350 <br /> Natural<br />From Rs. 17,999</a></li>
-                    <li><img src={nike8} alt="" className="w-50 h-50 transform hover:scale-103 transition duration-300"/><a href="#">Adidas Sambas OG <br /> Collegiate Green<br />From Rs. 14,999</a></li>
-                </ul>
-            </div>
-            <div className="mt-20 flex justify-center">
-                <button className="bg-gray-950 text-white p-2 pl-2 pr-2 text-sm hover:cursor-pointer hover:scale-105 transition duration-300">View All</button>
-            </div>
+            {products.map((row, rowIndex) => (
+                <div key={rowIndex} className="mt-8 md:pl-40 md:pr-40">
+                    <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2">
+                        {row.map((product, index) => (
+                            <li key={index} className="">
+                                <img 
+                                    src={product.img} 
+                                    alt={product.name}
+                                    className="w-full h-auto aspect-square object-cover transform hover:scale-103 transition duration-300 mb-2"
+                                />
+                                <a href="#" className="block text-xs md:text-xs">
+                                    {product.name}<br />
+                                    {product.subtitle}<br />
+                                    <span className="">From Rs. {product.price}</span>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
             
-        </div>);    
+            <div className="mt-12 md:mt-20 flex justify-center">
+                <button className="bg-gray-950 text-white py-3 px-6 md:py-2 md:px-4 text-sm hover:cursor-pointer hover:scale-105 transition duration-100">
+                    View All
+                </button>
+            </div>
+        </div>
+    );
 }
