@@ -2,7 +2,7 @@ import nike from "../images/image.png";
 
 export default function Hero() {
     return (
-        <div className="relative mt-15 md:mt-35 pb-10 md:pb-60 flex justify-center overflow-hidden">
+        <div className="relative mt-15 md:mt-30 pb-10 md:pb-60 flex justify-center overflow-hidden">
             <div className="flex justify-between w-full">
 
                 <div className="absolute inset-0 text-center z-0 mix-blend-multiply mt-15 md:mt-15">
@@ -25,7 +25,7 @@ export default function Hero() {
                 <img
                     src={nike}
                     alt="sneaker"
-                    className="relative z-10 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl scale-90 md:scale-107 mx-auto"
+                    className="relative z-10 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl scale-85 md:scale-106 mx-auto"
                 />
 
             </div>

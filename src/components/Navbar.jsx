@@ -74,6 +74,9 @@ export default function Navbar() {
                     <button className="p-2">
                         <Search size={20} />
                     </button>
+                    <button className="">
+                                <User2 size={20} />
+                    </button>
                     <button className="p-2">
                         <ShoppingCart size={20} />
                     </button>
@@ -88,7 +91,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="fixed top-[60px] left-0 right-0 bg-white z-40 lg:hidden border-b shadow-lg">
+                <div className="fixed top-[60px] left-0 right-0 bg-white z-40 lg:hidden shadow-lg text-right pr-5">
                     <ul className="flex flex-col text-black text-base p-6 gap-4">
                         <li className='hover:underline hover:underline-offset-5' onClick={() => setIsMobileMenuOpen(false)}>
                             <Link to="/">Home</Link>
@@ -102,12 +105,7 @@ export default function Navbar() {
                         <li className='hover:underline hover:underline-offset-5' onClick={() => setIsMobileMenuOpen(false)}>
                             <Link to="/featured">Featured</Link>
                         </li>
-                        <li className="pt-4">
-                            <button className="w-20 border p-2 rounded-full hover:bg-black hover:text-white transition duration-400 flex items-center justify-center gap-2">
-                                <User2 size={16} />
-                                Account
-                            </button>
-                        </li>
+
                     </ul>
                 </div>
             )}

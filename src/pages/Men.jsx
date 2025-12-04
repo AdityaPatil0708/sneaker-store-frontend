@@ -1,15 +1,15 @@
 import Navbar from "../components/Navbar.jsx";
-import Hero from "../components/Hero.jsx";
+import MenShoes from "../components/ShoesMen.jsx"
 import Footer from "../components/Footer.jsx";
-import Hero2 from "../components/Hero2.jsx";
+
+import ShoesMen from "../components/ShoesMen.jsx";
 
 function Men() {
   return (
     <div className="max-w-7xl mx-auto">
       <Navbar />
       <main>
-        <Hero />
-        <Hero2 />
+        <ShoesMen/>
       </main>
       <Footer />
     </div>

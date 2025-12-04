@@ -15,7 +15,7 @@ import nike8 from "../images/adidas3.png";
 import adidas4 from "../images/yeezy2.png";
 
 
-export default function Hero2() {
+export default function ShoesMen() {
     const products = [
         [
             { img: nike1, name: "Air Jordan 1 Retro Low", subtitle: "OG 'Mocha'", price: "14,999" },
@@ -38,15 +38,10 @@ export default function Hero2() {
     ];
 
     return (
-        <div id="image_description" className="border-b border-gray-700 mt-10 pb-10 px-4">
-            <div className="box-border flex justify-center mb-8">
-                <img 
-                    src={bestselling} 
-                    alt="Best Selling" 
-                    className="w-full max-w-2xl h-auto"
-                />
-            </div>  
-            
+        <div id="image_description" className="border-b border-gray-700 mt-40 pb-10 px-4">
+            <div className="text-2xl flex justify-center">
+                <p>Men</p>
+            </div>
             {products.map((row, rowIndex) => (
                 <div key={rowIndex} className="mt-8 md:pl-40 md:pr-40 ">
                     <ul className="grid grid-cols-2 md:grid-cols-4">
