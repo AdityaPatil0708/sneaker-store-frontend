@@ -1,16 +1,16 @@
-import nikeHero1 from "../images/nikeHero1.png"
-import nikeHero2 from "../images/nikeHero2.jpg"
+import pumaHero1 from "../images/pumaHero1.jpg"
+import pumaHero2 from "../images/pumaHero2.jpg"
 import nikelogo from "../images/nikelogo.png"
 import pumalogo from "../images/pumalogo.png"
 import adidaslogo from "../images/adidaslogo.jpg"
 
-import nike1 from "../images/nike1.png"
-import nike2 from "../images/nike2.png"
-import nike3 from "../images/nike3.png"
-import nike4 from "../images/nike4.png"
-import nike5 from "../images/nike5.png"
-import nike6 from "../images/nike6.png"
-import nike7 from "../images/nike7.png"
+import nike1 from "../images/w1.png"
+import nike2 from "../images/w2.png"
+import nike3 from "../images/w3.png"
+import nike4 from "../images/w4.png"
+import nike5 from "../images/w5.png"
+import nike6 from "../images/w6.png"
+import nike7 from "../images/w7.png"
 
 import adidas1 from "../images/adidas1.png";
 import adidas2 from "../images/adidas2.png";
@@ -20,28 +20,28 @@ import adidas5 from "../images/adidas5.png";
 import adidas6 from "../images/adidas6.png";
 import adidas7 from "../images/adidas7.png";
 
-import puma1 from "../images/puma1.png"
-import puma2 from "../images/puma8.png"
-import puma3 from "../images/puma3.png"
-import puma4 from "../images/puma4.png"
-import puma5 from "../images/puma5.png"
-import puma6 from "../images/puma6.png"
-import puma7 from "../images/puma7.png"
+import puma1 from "../images/w8.png"
+import puma2 from "../images/w9.png"
+import puma3 from "../images/w10.png"
+import puma4 from "../images/w11.png"
+import puma5 from "../images/w12.png"
+import puma6 from "../images/w13.png"
+import puma7 from "../images/w14.png"
 
-export default function ShoesMen() {
+export default function ShoesWomen() {
     const brands = [
         {
             name: "Nike",
             logo: nikelogo,
             logoClass: "h-6 w-9 md:h-8 md:w-12",
             products: [
-                { img: nike1, name: "Kobe Air Force One's", subtitle: "Men's Shoes", price: "14,999" },
-                { img: nike2, name: "Nike Air Force 1 '07 LV8", subtitle: "Men's Shoes", price: "14,999" },
-                { img: nike3, name: "Nike Air Force 1 '07 LV8", subtitle: "Men's Shoes", price: "13,999" },
-                { img: nike4, name: "Dunk Low ", subtitle: "Men's Shoes", price: "11,999" },
-                { img: nike5, name: "Nike Field General 'Blue Suede'", subtitle: "Men's Shoes", price: "12,999" },
-                { img: nike6, name: "Nike Dunk Low Retro Limited", subtitle: "Men's Shoes", price: "11,999" },
-                { img: nike7, name: "Nike P-6000 Suede", subtitle: "Men's Shoes", price: "9,999" }
+                { img: nike1, name: "Kobe Air Force One's", subtitle: "Women's Shoes", price: "14,999" },
+                { img: nike5, name: "Nike Field General 'Blue Suede'", subtitle: "Women's Shoes", price: "12,999" },
+                { img: nike3, name: "Nike Air Force 1 '07 LV8", subtitle: "Women's Shoes", price: "13,999" },
+                { img: nike2, name: "Nike Air Force 1 '07 LV8", subtitle: "Women's Shoes", price: "14,999" },
+                { img: nike4, name: "Dunk Low ", subtitle: "Women's Shoes", price: "11,999" },
+                { img: nike6, name: "Nike Dunk Low Retro Limited", subtitle: "Women's Shoes", price: "11,999" },
+                { img: nike7, name: "Nike P-6000 Suede", subtitle: "Women's Shoes", price: "9,999" }
             ]
         },
         {
@@ -49,13 +49,13 @@ export default function ShoesMen() {
             logo: pumalogo,
             logoClass: "h-8 w-8 md:h-10 md:w-10",
             products: [
-                { img: puma1, name: "Puma Suede Classic", subtitle: "Men's Shoes", price: "6,999" },
-                { img: puma2, name: "Puma Palermo", subtitle: "Men's Shoes", price: "5,999" },
-                { img: puma3, name: "Puma RS-X", subtitle: "Men's Shoes", price: "8,999" },
-                { img: puma4, name: "Puma Palermo", subtitle: "Men's Shoes", price: "10,999" },
-                { img: puma5, name: "Puma Palermo", subtitle: "Men's Shoes", price: "7,499" },
-                { img: puma6, name: "Puma Mayze", subtitle: "Men's Shoes", price: "8,499" },
-                { img: puma7, name: "Puma Palermo", subtitle: "Men's Shoes", price: "9,499" }
+                { img: puma1, name: "Puma Suede Classic", subtitle: "Women's Shoes", price: "6,999" },
+                { img: puma2, name: "Puma Palermo", subtitle: "Women's Shoes", price: "5,999" },
+                { img: puma3, name: "Puma RS-X", subtitle: "Women's Shoes", price: "8,999" },
+                { img: puma4, name: "Puma Palermo", subtitle: "Women's Shoes", price: "10,999" },
+                { img: puma5, name: "Puma Palermo", subtitle: "Women's Shoes", price: "7,499" },
+                { img: puma6, name: "Puma Mayze", subtitle: "Women's Shoes", price: "8,499" },
+                { img: puma7, name: "Puma Palermo", subtitle: "Women's Shoes", price: "9,499" }
             ]
         },
         {
@@ -63,13 +63,13 @@ export default function ShoesMen() {
             logo: adidaslogo,
             logoClass: "h-7 w-9 md:h-9 md:w-11",
             products: [
-                { img: adidas1, name: "Adidas Sambas", subtitle: "Men's Shoes", price: "10,999" },
-                { img: adidas7, name: "Adidas Stan Smith", subtitle: "Men's Shoes", price: "7,999" },
-                { img: adidas3, name: "Adidas Sambas", subtitle: "Men's Shoes", price: "9,499" },
-                { img: adidas6, name: "Adidas Sambas", subtitle: "Men's Shoes", price: "13,999" },
-                { img: adidas4, name: "Adidas Sambas", subtitle: "Men's Shoes", price: "11,499" },
-                { img: adidas5, name: "Adidas Superstar", subtitle: "Men's Shoes", price: "8,999" },
-                { img: adidas2, name: "Adidas Sambas", subtitle: "Men's Shoes", price: "16,999" },
+                { img: adidas4, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "11,499" },
+                { img: adidas6, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "13,999" },
+                { img: adidas2, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "16,999" },
+                { img: adidas7, name: "Adidas Stan Smith", subtitle: "Women's Shoes", price: "7,999" },
+                { img: adidas3, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "9,499" },
+                { img: adidas1, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "10,999" },
+                { img: adidas5, name: "Adidas Superstar", subtitle: "Women's Shoes", price: "8,999" },
             ]
         }
     ];
@@ -79,23 +79,23 @@ export default function ShoesMen() {
             {/* Mobile Hero - Only first image */}
             <div className="md:hidden mb-10">
                 <img 
-                    src={nikeHero1} 
-                    alt="Nike Hero 1" 
-                    className="w-full h-70 sm:h-80 object-cover"
+                    src={pumaHero1} 
+                    alt="Puma Hero 1" 
+                    className="w-full h-60 sm:h-80 object-cover"
                 />
             </div>
 
             {/* Desktop Hero - Both images */}
             <div className="hidden md:flex justify-center mb-30">
                 <img 
-                    src={nikeHero1} 
-                    alt="Nike Hero 1" 
-                    className="h-150 object-cover"
+                    src={pumaHero1} 
+                    alt="Puma Hero 1" 
+                    className="h-140 object-cover"
                 />
                 <img 
-                    src={nikeHero2} 
-                    alt="Nike Hero 2" 
-                    className="h-150 object-cover"
+                    src={pumaHero2} 
+                    alt="Puma Hero 2" 
+                    className="h-140 object-cover"
                 />
             </div>
 
@@ -118,7 +118,7 @@ export default function ShoesMen() {
                         {brand.products.map((product, index) => (
                             <div 
                                 key={index} 
-                                className="flex-shrink-0 w-44 sm:w-52 md:w-73"
+                                className="flex-shrink-0 w-44 sm:w-52 md:w-73 hover:cursor-pointer"
                             >
                                 <a 
                                     href="#" 

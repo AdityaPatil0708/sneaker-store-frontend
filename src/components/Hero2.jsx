@@ -11,7 +11,7 @@ import adidas2 from "../images/jordan6.png";
 
 import puma4 from "../images/yeezy.png";
 import nike7 from "../images/adidas4.png";
-import nike8 from "../images/adidas3.png";
+import nike8 from "../images/adidas3new.png";
 import adidas4 from "../images/yeezy2.png";
 
 
@@ -48,7 +48,7 @@ export default function Hero2() {
             </div>  
             
             {products.map((row, rowIndex) => (
-                <div key={rowIndex} className="mt-8 md:pl-40 md:pr-40 ">
+                <div key={rowIndex} className="mt-8 md:pl-45 md:pr-45 ">
                     <ul className="grid grid-cols-2 md:grid-cols-4">
                         {row.map((product, index) => (
                             <li key={index} className="">
@@ -56,7 +56,7 @@ export default function Hero2() {
                                     <img 
                                     src={product.img} 
                                     alt={product.name}
-                                    className="w-full h-auto aspect-square object-cover transform hover:scale-103 transition duration-300 mb-2"/>
+                                    className="w-full h-50 object-cover -scale-x-100 mb-2"/>
                                 </a>
                                 <a href="#" className="md:ml-2 md:text-xs text-center md:text-left ">
                                     {product.name}<br />
