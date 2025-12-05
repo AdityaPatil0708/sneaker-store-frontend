@@ -113,7 +113,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="fixed top-[60px] left-0 right-0 bg-white z-40 lg:hidden shadow-lg text-right pr-5">
+                <div className="fixed top-[60px] left-0 right-0 bg-white z-40 lg:hidden shadow-lg text-center pr-5">
                     <ul className="flex flex-col text-black text-base p-6 gap-4">
                         <li onClick={() => setIsMobileMenuOpen(false)}>
                             <NavLink to="/" className={navLinkClass}>
