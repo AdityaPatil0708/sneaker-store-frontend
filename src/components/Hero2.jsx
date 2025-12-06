@@ -1,18 +1,18 @@
-import bestselling from "../images/BestSelling.png";
-import nike1 from "../images/jordan1.webp";
-import nike2 from "../images/jordan2.webp";
-import adidas1 from "../images/adidas1.webp";
-import puma1 from "../images/puma2.webp";
+import bestselling from "/images/bestselling.png";
+import nike1 from "/images/jordan1.webp";
+import nike2 from "/images/jordan2.webp";
+import adidas1 from "/images/adidas1.webp";
+import puma1 from "/images/puma2.webp";
 
-import puma2 from "../images/jordan3.webp";
-import nike3 from "../images/jordan4.webp";
-import nike4 from "../images/jordan5.webp";
-import adidas2 from "../images/jordan6.png";
+import puma2 from "/images/jordan3.webp";
+import nike3 from "/images/jordan4.webp";
+import nike4 from "/images/jordan5.webp";
+import adidas2 from "/images/jordan6.png";
 
-import puma4 from "../images/yeezy.png";
-import nike7 from "../images/adidas4.png";
-import nike8 from "../images/adidas3new.png";
-import adidas4 from "../images/yeezy2.png";
+import puma4 from "/images/yeezy.png";
+import nike7 from "/images/adidas4.png";
+import nike8 from "/images/adidas3new.png";
+import adidas4 from "/images/yeezy2.png";
 
 
 export default function Hero2() {

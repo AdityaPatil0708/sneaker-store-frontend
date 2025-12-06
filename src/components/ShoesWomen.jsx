@@ -1,34 +1,34 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef } from 'react';
-import pumaHero1 from "../images/pumaHero1.jpg"
-import pumaHero2 from "../images/pumaHero2.jpg"
-import nikelogo from "../images/nikelogo.png"
-import pumalogo from "../images/pumalogo.png"
-import adidaslogo from "../images/adidaslogo.jpg"
+import pumaHero1 from "/images/pumaHero1.jpg"
+import pumaHero2 from "/images/pumaHero2.jpg"
+import nikelogo from "/images/nikelogo.png"
+import pumalogo from "/images/pumalogo.png"
+import adidaslogo from "/images/adidaslogo.jpg"
 
-import nike1 from "../images/w1.png"
-import nike2 from "../images/w2.png"
-import nike3 from "../images/w3.png"
-import nike4 from "../images/w4.png"
-import nike5 from "../images/w5.png"
-import nike6 from "../images/w6.png"
-import nike7 from "../images/w7.png"
+import nike1 from "/images/w1.png"
+import nike2 from "/images/w2.png"
+import nike3 from "/images/w3.png"
+import nike4 from "/images/w4.png"
+import nike5 from "/images/w5.png"
+import nike6 from "/images/w6.png"
+import nike7 from "/images/w7.png"
 
-import adidas1 from "../images/adidas1.png";
-import adidas2 from "../images/adidas2.png";
-import adidas3 from "../images/adidas3.png";
-import adidas4 from "../images/adidas4new.png";
-import adidas5 from "../images/adidas5.png";
-import adidas6 from "../images/adidas6.png";
-import adidas7 from "../images/adidas7.png";
+import adidas1 from "/images/adidas1.png";
+import adidas2 from "/images/adidas2.png";
+import adidas3 from "/images/adidas3.png";
+import adidas4 from "/images/adidas4new.png";
+import adidas5 from "/images/adidas5.png";
+import adidas6 from "/images/adidas6.png";
+import adidas7 from "/images/adidas7.png";
 
-import puma1 from "../images/w8.png"
-import puma2 from "../images/w9.png"
-import puma3 from "../images/w10.png"
-import puma4 from "../images/w11.png"
-import puma5 from "../images/w12.png"
-import puma6 from "../images/w13.png"
-import puma7 from "../images/w14.png"
+import puma1 from "/images/w8.png"
+import puma2 from "/images/w9.png"
+import puma3 from "/images/w10.png"
+import puma4 from "/images/w11.png"
+import puma5 from "/images/w12.png"
+import puma6 from "/images/w13.png"
+import puma7 from "/images/w14.png"
 
 export default function ShoesWomen() {
     // Create refs for each brand section

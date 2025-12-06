@@ -1,4 +1,4 @@
-import nike from "../images/image.png";
+import nike from "/images/image.png";
 
 export default function Hero() {
     return (

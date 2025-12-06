@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Search, User2, ShoppingCart, Menu, X } from 'lucide-react';
 import { NavLink } from "react-router-dom";
-import logo from '../images/logo2.png';
+import logo from '/images/logo2.png';
 
 export default function Navbar() {
     const [isVisible, setIsVisible] = useState(true);
