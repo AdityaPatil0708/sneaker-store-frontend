@@ -1,3 +1,5 @@
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from 'react';
 import nikeHero1 from "../images/nikeHero1.png"
 import nikeHero2 from "../images/nikeHero2.jpg"
 import nikelogo from "../images/nikelogo.png"
@@ -29,11 +31,31 @@ import puma6 from "../images/puma6.png"
 import puma7 from "../images/puma7.png"
 
 export default function ShoesMen() {
+    // Create refs for each brand section
+    const nikeScrollRef = useRef(null);
+    const pumaScrollRef = useRef(null);
+    const adidasScrollRef = useRef(null);
+
+    const scroll = (ref, direction) => {
+        if (ref.current) {
+            const scrollAmount = 300; // Adjust scroll distance
+            const newPosition = direction === 'left' 
+                ? ref.current.scrollLeft - scrollAmount 
+                : ref.current.scrollLeft + scrollAmount;
+            
+            ref.current.scrollTo({
+                left: newPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     const brands = [
         {
             name: "Nike",
             logo: nikelogo,
             logoClass: "h-6 w-9 md:h-8 md:w-12",
+            scrollRef: nikeScrollRef,
             products: [
                 { img: nike1, name: "Kobe Air Force One's", subtitle: "Men's Shoes", price: "14,999" },
                 { img: nike2, name: "Nike Air Force 1 '07 LV8", subtitle: "Men's Shoes", price: "14,999" },
@@ -48,6 +70,7 @@ export default function ShoesMen() {
             name: "Puma",
             logo: pumalogo,
             logoClass: "h-8 w-8 md:h-10 md:w-10",
+            scrollRef: pumaScrollRef,
             products: [
                 { img: puma1, name: "Puma Suede Classic", subtitle: "Men's Shoes", price: "6,999" },
                 { img: puma2, name: "Puma Palermo", subtitle: "Men's Shoes", price: "5,999" },
@@ -62,6 +85,7 @@ export default function ShoesMen() {
             name: "Adidas",
             logo: adidaslogo,
             logoClass: "h-7 w-9 md:h-9 md:w-11",
+            scrollRef: adidasScrollRef,
             products: [
                 { img: adidas1, name: "Adidas Sambas", subtitle: "Men's Shoes", price: "10,999" },
                 { img: adidas7, name: "Adidas Stan Smith", subtitle: "Men's Shoes", price: "7,999" },
@@ -78,23 +102,23 @@ export default function ShoesMen() {
         <div className="mt-16 md:mt-35 border-b pb-8">
             {/* Mobile Hero - Only first image */}
             <div className="md:hidden mb-10">
-                <img 
-                    src={nikeHero1} 
-                    alt="Nike Hero 1" 
+                <img
+                    src={nikeHero1}
+                    alt="Nike Hero 1"
                     className="w-full h-70 sm:h-80 object-cover"
                 />
             </div>
 
             {/* Desktop Hero - Both images */}
             <div className="hidden md:flex justify-center mb-30">
-                <img 
-                    src={nikeHero1} 
-                    alt="Nike Hero 1" 
+                <img
+                    src={nikeHero1}
+                    alt="Nike Hero 1"
                     className="h-150 object-cover"
                 />
-                <img 
-                    src={nikeHero2} 
-                    alt="Nike Hero 2" 
+                <img
+                    src={nikeHero2}
+                    alt="Nike Hero 2"
                     className="h-150 object-cover"
                 />
             </div>
@@ -102,26 +126,45 @@ export default function ShoesMen() {
             {/* Brand Sections */}
             {brands.map((brand, brandIndex) => (
                 <div key={brandIndex} className="mb-12 md:mb-20">
-                    {/* Brand Logo */}
+                    {/* Brand Logo and Navigation Buttons */}
                     <div className="px-4 md:px-0 mb-4 md:mb-2">
-                        <div className="font-semibold text-xl md:text-2xl tracking-wider flex md:ml-35 md:mr-35 md:p-2 underline underline-offset-2">
-                            <img 
-                                src={brand.logo} 
-                                alt={`${brand.name} logo`} 
-                                className={brand.logoClass} 
+                        <div className="font-semibold text-xl md:text-2xl tracking-wider md:ml-35 md:mr-35 md:p-2 flex justify-between items-center">
+                            <img
+                                src={brand.logo}
+                                alt={`${brand.name} logo`}
+                                className={brand.logoClass}
                             />
+                            <div className="flex gap-2">
+                                <button 
+                                    onClick={() => scroll(brand.scrollRef, 'left')}
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all"
+                                    aria-label="Scroll left"
+                                >
+                                    <ChevronLeft size={20} className="md:w-6 md:h-6" />
+                                </button>
+                                <button 
+                                    onClick={() => scroll(brand.scrollRef, 'right')}
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all"
+                                    aria-label="Scroll right"
+                                >
+                                    <ChevronRight size={20} className="md:w-6 md:h-6" />
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     {/* Products Horizontal Scroll */}
-                    <div className="flex gap-3 md:gap-2 overflow-x-auto px-4 md:px-0 md:ml-35 md:mr-35 scrollbar-hide">
+                    <div 
+                        ref={brand.scrollRef}
+                        className="flex gap-3 md:gap-2 overflow-x-auto px-4 md:px-0 md:ml-35 md:mr-35 scrollbar-hide"
+                    >
                         {brand.products.map((product, index) => (
-                            <div 
-                                key={index} 
-                                className="flex-shrink-0 w-44 sm:w-52 md:w-73"
+                            <div
+                                key={index}
+                                className="shrink-0 w-44 sm:w-52 md:w-73"
                             >
-                                <a 
-                                    href="#" 
+                                <a
+                                    href="#"
                                     className="block hover:opacity-90 transition-opacity"
                                 >
                                     <img
@@ -134,7 +177,7 @@ export default function ShoesMen() {
                                         <div className="hover:underline hover:underline-offset-3">
                                             <p className="font-medium truncate">{product.name}</p>
                                             <p className="text-gray-600 text-xs">{product.subtitle}</p>
-                                            <p className="font-semibold mt-1">₹{product.price}</p>
+                                            <p className="mt-1">₹{product.price}</p>
                                         </div>
                                     </div>
                                 </a>

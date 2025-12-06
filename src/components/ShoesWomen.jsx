@@ -1,3 +1,5 @@
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from 'react';
 import pumaHero1 from "../images/pumaHero1.jpg"
 import pumaHero2 from "../images/pumaHero2.jpg"
 import nikelogo from "../images/nikelogo.png"
@@ -29,11 +31,31 @@ import puma6 from "../images/w13.png"
 import puma7 from "../images/w14.png"
 
 export default function ShoesWomen() {
+    // Create refs for each brand section
+    const nikeScrollRef = useRef(null);
+    const pumaScrollRef = useRef(null);
+    const adidasScrollRef = useRef(null);
+
+    const scroll = (ref, direction) => {
+        if (ref.current) {
+            const scrollAmount = 300; // Adjust scroll distance
+            const newPosition = direction === 'left' 
+                ? ref.current.scrollLeft - scrollAmount 
+                : ref.current.scrollLeft + scrollAmount;
+            
+            ref.current.scrollTo({
+                left: newPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     const brands = [
         {
             name: "Nike",
             logo: nikelogo,
             logoClass: "h-6 w-9 md:h-8 md:w-12",
+            scrollRef: nikeScrollRef,
             products: [
                 { img: nike1, name: "Kobe Air Force One's", subtitle: "Women's Shoes", price: "14,999" },
                 { img: nike5, name: "Nike Field General 'Blue Suede'", subtitle: "Women's Shoes", price: "12,999" },
@@ -48,6 +70,7 @@ export default function ShoesWomen() {
             name: "Puma",
             logo: pumalogo,
             logoClass: "h-8 w-8 md:h-10 md:w-10",
+            scrollRef: pumaScrollRef,
             products: [
                 { img: puma1, name: "Puma Suede Classic", subtitle: "Women's Shoes", price: "6,999" },
                 { img: puma2, name: "Puma Palermo", subtitle: "Women's Shoes", price: "5,999" },
@@ -62,6 +85,7 @@ export default function ShoesWomen() {
             name: "Adidas",
             logo: adidaslogo,
             logoClass: "h-7 w-9 md:h-9 md:w-11",
+            scrollRef: adidasScrollRef,
             products: [
                 { img: adidas4, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "11,499" },
                 { img: adidas6, name: "Adidas Sambas", subtitle: "Women's Shoes", price: "13,999" },
@@ -102,23 +126,42 @@ export default function ShoesWomen() {
             {/* Brand Sections */}
             {brands.map((brand, brandIndex) => (
                 <div key={brandIndex} className="mb-12 md:mb-20">
-                    {/* Brand Logo */}
+                    {/* Brand Logo and Navigation Buttons */}
                     <div className="px-4 md:px-0 mb-4 md:mb-2">
-                        <div className="font-semibold text-xl md:text-2xl tracking-wider flex md:ml-35 md:mr-35 md:p-2 underline underline-offset-2">
-                            <img 
-                                src={brand.logo} 
-                                alt={`${brand.name} logo`} 
-                                className={brand.logoClass} 
+                        <div className="font-semibold text-xl md:text-2xl tracking-wider md:ml-35 md:mr-35 md:p-2 flex justify-between items-center">
+                            <img
+                                src={brand.logo}
+                                alt={`${brand.name} logo`}
+                                className={brand.logoClass}
                             />
+                            <div className="flex gap-2">
+                                <button 
+                                    onClick={() => scroll(brand.scrollRef, 'left')}
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all"
+                                    aria-label="Scroll left"
+                                >
+                                    <ChevronLeft size={20} className="md:w-6 md:h-6" />
+                                </button>
+                                <button 
+                                    onClick={() => scroll(brand.scrollRef, 'right')}
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all"
+                                    aria-label="Scroll right"
+                                >
+                                    <ChevronRight size={20} className="md:w-6 md:h-6" />
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     {/* Products Horizontal Scroll */}
-                    <div className="flex gap-3 md:gap-2 overflow-x-auto px-4 md:px-0 md:ml-35 md:mr-35 scrollbar-hide">
+                    <div 
+                        ref={brand.scrollRef}
+                        className="flex gap-3 md:gap-2 overflow-x-auto px-4 md:px-0 md:ml-35 md:mr-35 scrollbar-hide"
+                    >
                         {brand.products.map((product, index) => (
                             <div 
                                 key={index} 
-                                className="flex-shrink-0 w-44 sm:w-52 md:w-73 hover:cursor-pointer"
+                                className="shrink-0 w-44 sm:w-52 md:w-73 hover:cursor-pointer"
                             >
                                 <a 
                                     href="#" 

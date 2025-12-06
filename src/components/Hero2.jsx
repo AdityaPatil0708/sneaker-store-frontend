@@ -49,7 +49,7 @@ export default function Hero2() {
             
             {products.map((row, rowIndex) => (
                 <div key={rowIndex} className="mt-8 md:pl-45 md:pr-45 ">
-                    <ul className="grid grid-cols-2 md:grid-cols-4">
+                    <ul className="grid grid-cols-2 gap-1 md:grid-cols-4">
                         {row.map((product, index) => (
                             <li key={index} className="">
                                 <a href="" className="">
