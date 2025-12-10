@@ -31,14 +31,14 @@ import puma6 from "/images/w13.png"
 import puma7 from "/images/w14.png"
 
 export default function ShoesWomen() {
-    // Create refs for each brand section
+    
     const nikeScrollRef = useRef(null);
     const pumaScrollRef = useRef(null);
     const adidasScrollRef = useRef(null);
 
     const scroll = (ref, direction) => {
         if (ref.current) {
-            const scrollAmount = 300; // Adjust scroll distance
+            const scrollAmount = 500;
             const newPosition = direction === 'left' 
                 ? ref.current.scrollLeft - scrollAmount 
                 : ref.current.scrollLeft + scrollAmount;
@@ -58,7 +58,7 @@ export default function ShoesWomen() {
             scrollRef: nikeScrollRef,
             products: [
                 { img: nike1, name: "Kobe Air Force One's", subtitle: "Women's Shoes", price: "14,999" },
-                { img: nike5, name: "Nike Field General 'Blue Suede'", subtitle: "Women's Shoes", price: "12,999" },
+                { img: nike5, name: "Nike Field General 'Maroon Suede'", subtitle: "Women's Shoes", price: "12,999" },
                 { img: nike3, name: "Nike Air Force 1 '07 LV8", subtitle: "Women's Shoes", price: "13,999" },
                 { img: nike2, name: "Nike Air Force 1 '07 LV8", subtitle: "Women's Shoes", price: "14,999" },
                 { img: nike4, name: "Dunk Low ", subtitle: "Women's Shoes", price: "11,999" },
@@ -75,9 +75,9 @@ export default function ShoesWomen() {
                 { img: puma1, name: "Puma Suede Classic", subtitle: "Women's Shoes", price: "6,999" },
                 { img: puma2, name: "Puma Palermo", subtitle: "Women's Shoes", price: "5,999" },
                 { img: puma3, name: "Puma RS-X", subtitle: "Women's Shoes", price: "8,999" },
-                { img: puma4, name: "Puma Palermo", subtitle: "Women's Shoes", price: "10,999" },
+                { img: puma4, name: "Puma Mayze", subtitle: "Women's Shoes", price: "10,999" },
                 { img: puma5, name: "Puma Palermo", subtitle: "Women's Shoes", price: "7,499" },
-                { img: puma6, name: "Puma Mayze", subtitle: "Women's Shoes", price: "8,499" },
+                { img: puma6, name: "Puma Palermo", subtitle: "Women's Shoes", price: "8,499" },
                 { img: puma7, name: "Puma Palermo", subtitle: "Women's Shoes", price: "9,499" }
             ]
         },
@@ -125,7 +125,7 @@ export default function ShoesWomen() {
 
             {/* Brand Sections */}
             {brands.map((brand, brandIndex) => (
-                <div key={brandIndex} className="mb-12 md:mb-20">
+                <div key={brandIndex} className="mb-12 md:mb-15">
                     {/* Brand Logo and Navigation Buttons */}
                     <div className="px-4 md:px-0 mb-4 md:mb-2">
                         <div className="font-semibold text-xl md:text-2xl tracking-wider md:ml-35 md:mr-35 md:p-2 flex justify-between items-center">
@@ -177,7 +177,7 @@ export default function ShoesWomen() {
                                         <div className="hover:underline hover:underline-offset-3">
                                             <p className="font-medium truncate">{product.name}</p>
                                             <p className="text-gray-600 text-xs">{product.subtitle}</p>
-                                            <p className="font-semibold mt-1">₹{product.price}</p>
+                                            <p className="mt-1">₹{product.price}</p>
                                         </div>
                                     </div>
                                 </a>

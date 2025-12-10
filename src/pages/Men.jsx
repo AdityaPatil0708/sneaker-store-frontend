@@ -1,7 +1,5 @@
 import Navbar from "../components/Navbar.jsx";
-import MenShoes from "../components/ShoesMen.jsx"
 import Footer from "../components/Footer.jsx";
-
 import ShoesMen from "../components/ShoesMen.jsx";
 
 function Men() {

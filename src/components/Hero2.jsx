@@ -1,3 +1,4 @@
+
 import bestselling from "/images/bestselling.png";
 import nike1 from "/images/jordan1.webp";
 import nike2 from "/images/jordan2.webp";
@@ -40,23 +41,23 @@ export default function Hero2() {
     return (
         <div id="image_description" className="border-b border-gray-700 mt-10 pb-10 px-4">
             <div className="box-border flex justify-center mb-8">
-                <img 
-                    src={bestselling} 
-                    alt="Best Selling" 
+                <img
+                    src={bestselling}
+                    alt="Best Selling"
                     className="w-full max-w-2xl h-auto"
                 />
-            </div>  
-            
+            </div>
+
             {products.map((row, rowIndex) => (
                 <div key={rowIndex} className="mt-8 md:pl-45 md:pr-45 ">
                     <ul className="grid grid-cols-2 gap-1 md:grid-cols-4">
                         {row.map((product, index) => (
                             <li key={index} className="">
                                 <a href="" className="">
-                                    <img 
-                                    src={product.img} 
-                                    alt={product.name}
-                                    className="w-full h-50 object-cover -scale-x-100 mb-2"/>
+                                    <img
+                                        src={product.img}
+                                        alt={product.name}
+                                        className="w-full h-50 object-cover -scale-x-100 mb-2" />
                                 </a>
                                 <a href="#" className="md:ml-2 md:text-xs text-center md:text-left ">
                                     {product.name}<br />
@@ -68,12 +69,8 @@ export default function Hero2() {
                     </ul>
                 </div>
             ))}
-            
-            <div className="mt-12 md:mt-20 flex justify-center">
-                <button className="bg-gray-950 text-white py-3 px-6 md:py-2 md:px-4 text-sm hover:cursor-pointer hover:scale-105 transition duration-100">
-                    View All
-                </button>
-            </div>
+            <br />
+            <br />
         </div>
     );
 }

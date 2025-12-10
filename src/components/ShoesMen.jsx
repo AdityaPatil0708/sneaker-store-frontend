@@ -31,14 +31,14 @@ import puma6 from "/images/puma6.png"
 import puma7 from "/images/puma7.png"
 
 export default function ShoesMen() {
-    // Create refs for each brand section
+
     const nikeScrollRef = useRef(null);
     const pumaScrollRef = useRef(null);
     const adidasScrollRef = useRef(null);
 
     const scroll = (ref, direction) => {
         if (ref.current) {
-            const scrollAmount = 300; // Adjust scroll distance
+            const scrollAmount = 500; 
             const newPosition = direction === 'left' 
                 ? ref.current.scrollLeft - scrollAmount 
                 : ref.current.scrollLeft + scrollAmount;
@@ -100,7 +100,7 @@ export default function ShoesMen() {
 
     return (
         <div className="mt-16 md:mt-35 border-b pb-8">
-            {/* Mobile Hero - Only first image */}
+
             <div className="md:hidden mb-10">
                 <img
                     src={nikeHero1}
@@ -109,7 +109,7 @@ export default function ShoesMen() {
                 />
             </div>
 
-            {/* Desktop Hero - Both images */}
+
             <div className="hidden md:flex justify-center mb-30">
                 <img
                     src={nikeHero1}
@@ -125,8 +125,8 @@ export default function ShoesMen() {
 
             {/* Brand Sections */}
             {brands.map((brand, brandIndex) => (
-                <div key={brandIndex} className="mb-12 md:mb-20">
-                    {/* Brand Logo and Navigation Buttons */}
+                <div key={brandIndex} className="mb-12 md:mb-15">
+
                     <div className="px-4 md:px-0 mb-4 md:mb-2">
                         <div className="font-semibold text-xl md:text-2xl tracking-wider md:ml-35 md:mr-35 md:p-2 flex justify-between items-center">
                             <img
@@ -153,7 +153,7 @@ export default function ShoesMen() {
                         </div>
                     </div>
 
-                    {/* Products Horizontal Scroll */}
+
                     <div 
                         ref={brand.scrollRef}
                         className="flex gap-3 md:gap-2 overflow-x-auto px-4 md:px-0 md:ml-35 md:mr-35 scrollbar-hide"

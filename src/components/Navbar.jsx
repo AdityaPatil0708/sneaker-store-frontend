@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Search, User2, ShoppingCart, Menu, X } from 'lucide-react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from '/images/logo2.png';
 
 export default function Navbar() {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleScroll = () => {
         if (window.scrollY < lastScrollY) {
@@ -27,12 +28,13 @@ export default function Navbar() {
 
     const navbarClass = isVisible ? 'translate-y-0' : '-translate-y-full';
 
-    // Active link styling function
+
     const navLinkClass = ({ isActive }) => 
         isActive 
             ? 'underline underline-offset-5' 
             : 'hover:underline hover:underline-offset-5';
 
+    
     return (
         <>
             <nav
@@ -63,11 +65,7 @@ export default function Navbar() {
                                 Women
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/featured" className={navLinkClass}>
-                                Featured
-                            </NavLink>
-                        </li>
+                        
                     </ul>
                 </div>
 
@@ -83,7 +81,10 @@ export default function Navbar() {
                             <Search size={20} className="hover:cursor-pointer text-gray-500" />
                         </div>
                     </div>
-                    <button className="border-b-black-500 border p-1.5 pl-3 pr-3 text-sm rounded-full hover:bg-black hover:text-white hover:cursor-pointer transition duration-400 flex items-center gap-2">
+                    <button
+                        onClick={() => navigate("/login")}
+                        className="border-b-black-500 border p-1.5 pl-3 pr-3 text-sm rounded-full hover:bg-black hover:text-white hover:cursor-pointer transition duration-400 flex items-center gap-2"
+                    >
                         <User2 size={16} />
                     </button>
                     <button className="border-b-black-500 border p-1.5 pl-3 pr-3 text-sm rounded-full hover:bg-black hover:text-white hover:cursor-pointer transition duration-400 flex items-center gap-2">
@@ -96,7 +97,7 @@ export default function Navbar() {
                     <button className="p-2">
                         <Search size={20} />
                     </button>
-                    <button className="">
+                    <button className="p-2">
                         <User2 size={20} />
                     </button>
                     <button className="p-2">
@@ -106,7 +107,7 @@ export default function Navbar() {
                         className="p-2"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
                 </div>
             </nav>
@@ -130,11 +131,7 @@ export default function Navbar() {
                                 Women
                             </NavLink>
                         </li>
-                        <li onClick={() => setIsMobileMenuOpen(false)}>
-                            <NavLink to="/featured" className={navLinkClass}>
-                                Featured
-                            </NavLink>
-                        </li>
+                        
                     </ul>
                 </div>
             )}
